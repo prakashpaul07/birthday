@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Nobile:400italic,700italic);
+      @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+      * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+      body {
+        background: #e5e5e5;
+        background-image: url("bday.jpg");
+        background-repeat: repeat;
+        background-color: #3c0a47;
+        padding: 3%;
+      }
+
+      #card-front {
+        color: #ffdfdf;
+      }
+      .wrap {
+        padding: 1.5em 2.5em;
+      }
+      #card-front {
+        width: 50%;
+        -webkit-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25),
+          0 0 1px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25),
+          0 0 1px rgba(0, 0, 0, 0.5);
+        box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: 50%;
+      }
+
+      #card h1 {
+        text-align: center;
+        font-family: sans-serif;
+        font-style: italic;
+        font-size: 70px;
+        color: #fff;
+      }
+      #rh {
+        margin-left: 20%;
+        width: 40%;
+        margin-top: -8%;
+      }
+
+      #card-front {
+        background-color: #ff5555;
+        background-image: linear-gradient(top, #ff5555 0%, #ff7777 100%);
+        background-image: -moz-linear-gradient(top, #ff5555 0%, #ff7777 100%);
+        background-image: -webkit-linear-gradient(
+          top,
+          #ff5555 0%,
+          #ff7777 100%
+        );
+        transform-origin: left;
+        -moz-transform-origin: left;
+        -webkit-transform-origin: left;
+        transition: transform 1s linear;
+        -moz-transition: -moz-transform 1s linear;
+        -webkit-transition: -webkit-transform 1s linear;
+        position: relative;
+      }
+
+      #card-front button {
+        position: absolute;
+        bottom: 1em;
+        right: -12px;
+        background: #f44;
+        color: #fff;
+        font-family: "Nobile", sans-serif;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 1.5em;
+        padding: 0.5em;
+        border: none;
+        cursor: pointer;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25),
+          0 0 1px rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25),
+          0 0 1px rgba(0, 0, 0, 0.4);
+      }
+
+      #close {
+        display: none;
+      }
+      @media (min-width: 414px) and (max-width: 736px) {
+        body {
+          background-repeat: repeat;
+          background-size: 50%;
+        }
+        #card-front {
+          margin-top: 23%;
+        }
+        #card h1 {
+          font-size: 38px;
+        }
+        #card-front {
+          width: 50%;
+          position: absolute;
+          left: 10%;
+        }
+        #rh {
+          width: 120px;
+        }
+      }
+      @media (max-width: 414px){
+         body {
+          background-repeat: repeat;
+          background-size: 48%;
+        }
+        #card-front {
+          width: 50%;
+          position: absolute;
+          left: 14%;
+        }
+        #card h1 {
+          font-size: 23px;
+        }
+        #card-front {
+          margin-top: 40%;
+        }
+        #rh {
+          width: 110px;
+          margin-left: -3;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <div id="card-front">
+        <div class="wrap">
+          <h1>Happy &#8383;irthday!</h1>
+          <img
+            id="rh"
+            src=""
+            alt="pic"
+            style="border: 1px solid white"
+            width="30%"
+          />
+        </div>
+        <button id="open">&gt;</button>
+        <button id="close">&lt;</button>
+      </div>
+    </div>
+    <script>
+      (function () {
+        function $(id) {
+          return document.getElementById(id);
+        }
+
+        var card = $("card"),
+          openB = $("open"),
+          closeB = $("close"),
+          timer = null;
+        console.log("wat", card);
+        openB.addEventListener("click", function () {
+          const audio = new Audio("bday.mp3");
+          audio.play();
+          setTimeout(() => {
+            audio.pause();
+            window.location.href = "wishes.html";
+          }, 17500);
+        });
+      })();
+    </script>
+  </body>
+</html>
